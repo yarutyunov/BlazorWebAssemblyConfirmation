@@ -1,0 +1,15 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<Button Color="Color.Success" Clicked="TestConfirm">Test</Button>
+
+@code
+{
+    [Inject] IMessageService MessageService { get; set; } = default!;
+
+    private async Task TestConfirm()
+    {
+        var result = await MessageService.Confirm("Test");
+    }
+}
